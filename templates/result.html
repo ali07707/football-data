@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Résultat</title>
+    <style type="text/css">
+        body {
+            background-color: #F2F2F2;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .player-info {
+            flex-basis: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .player-info img {
+            max-width: 300px;
+            border-radius: 50%;
+        }
+        .player-info p {
+            margin: 10px 0;
+        }
+        .stats {
+            flex-basis: 50%;
+            text-align: center;
+        }
+        .stats img {
+            max-width: 400px;
+        }
+        .stats-label {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #F5A623;
+            color: #FFF;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="player-info">
+        <img src="/static/photo.png" alt="{{ player_name }}">
+        <h2>{{ player_info['Name'] }}</h2>
+        <p><strong>Nationalité :</strong> {{ player_info['Nationality'] }}</p>
+        <p><strong>Âge :</strong> {{ player_info['Age'] }}</p>
+        <p><strong>Taille :</strong> {{ player_info['Height'] }}</p>
+        <p><strong>Poids :</strong> {{ player_info['Weight'] }}</p>
+        <p><strong>Équipe :</strong> {{ player_info['Team'] }}</p>
+        <p><strong>Buts :</strong> {{ player_info['Goals'] }}</p>
+        <p><strong>Assists :</strong> {{ player_info['Assists'] }}</p>
+    </div>
+    <div class="stats">
+        <img src="/static/stats.png" alt="Statistiques">
+    </div>
+    <div class="stats-label">
+        <h3>La statistique</h3>
+        <p>Voici la statistique pour la saison en cours :</p>
+        <p><strong>{{ stat_label }} :</strong> {{ stat_per_match }}</p>
+    </div>
+</div>
+</body>
+</html>
